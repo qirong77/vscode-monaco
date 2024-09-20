@@ -1,0 +1,28 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+// This is a facade for the observable implementation. Only import from here!
+
+export { observableValueOpts } from './api.js';
+export { autorun, autorunHandleChanges, autorunOpts, autorunWithStore, autorunWithStoreHandleChanges } from './autorun.js';
+export { asyncTransaction, disposableObservableValue, globalTransaction, observableValue, subtransaction, transaction, TransactionImpl, type IChangeContext, type IObservable, type IObserver, type IReader, type ISettable, type ISettableObservable, type ITransaction } from './base.js';
+export { derived, derivedDisposable, derivedHandleChanges, derivedOpts, derivedWithSetter, derivedWithStore } from './derived.js';
+export { ObservablePromise, PromiseResult } from './promise.js';
+export { waitForState } from './utilsCancellation.js';
+export { constObservable, derivedConstOnceDefined, derivedObservableWithCache, derivedObservableWithWritableCache, keepObserved, mapObservableArrayCached, observableFromEvent, observableFromValueWithChangeEvent, observableSignal, observableSignalFromEvent, recomputeInitiallyAndOnChange, runOnChange, runOnChangeWithStore, ValueWithChangeEventFromObservable, type IObservableSignal } from './utils.js';
+export { type DebugOwner } from './debugName.js';
+
+import {
+	ConsoleObservableLogger,
+	setLogger } from './logging.js';
+
+// Remove "//" in the next line to enable logging
+const enableLogging = false
+	// || Boolean("true") // done "weirdly" so that a lint warning prevents you from pushing this
+	;
+
+if (enableLogging) {
+	setLogger(new ConsoleObservableLogger());
+}
