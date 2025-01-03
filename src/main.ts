@@ -6,6 +6,6 @@ const editor = monaco.editor.create(app, {
     value: text,
     language: "javascript",
 	wordWrap: "wordWrapColumn",
-	wordWrapColumn: 190,
+	wordWrapColumn: 5000,
 });
 console.log(monaco)

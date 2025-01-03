@@ -14,7 +14,9 @@
 	border: none;
 	overflow: hidden;
 	color: transparent;
-	background-color: transparent;
+	/* background-color: red; */
+	/* width: 1px !important; */
+	/* opacity: 0.6; */
 	z-index: -10;
 }
 /*.monaco-editor .inputarea {

@@ -731,7 +731,7 @@ export class TextAreaWrapper extends Disposable implements ICompleteTextAreaWrap
 
 	public setSelectionRange(reason: string, selectionStart: number, selectionEnd: number): void {
 		const textArea = this._actual;
-
+		debugger
 		let activeElement: Element | null = null;
 		const shadowRoot = dom.getShadowRoot(textArea);
 		if (shadowRoot) {
@@ -771,10 +771,11 @@ export class TextAreaWrapper extends Disposable implements ICompleteTextAreaWrap
 		try {
 			const scrollState = dom.saveParentsScrollTop(textArea);
 			this.setIgnoreSelectionChangeTime('setSelectionRange');
-			textArea.focus();
 			textArea.setSelectionRange(selectionStart, selectionEnd);
+			textArea.focus();
 			dom.restoreParentsScrollTop(textArea, scrollState);
 		} catch (e) {
+			console.log(e)
 			// Sometimes IE throws when setting selection (e.g. textarea is off-DOM)
 		}
 	}
