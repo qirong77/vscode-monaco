@@ -1,0 +1,1 @@
+https://github.com/microsoft/monaco-editor/issues/4444
